@@ -160,3 +160,5 @@ Preview runs on port 4173 and proxies API requests to 8080; backend must stay ru
 - [Gemini generateContent API](https://ai.google.dev/api/generate-content)
 - [React](https://react.dev/learn)
 - [MySQL](https://dev.mysql.com/doc/refman/8.0/en/)
+#   t a b l e - a n d - t h y m e  
+ 
