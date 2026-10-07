@@ -1,0 +1,46 @@
+erDiagram
+    RESTAURANT_TABLES ||--o{ ORDERS : seats
+    ORDERS ||--|{ ORDER_ITEMS : contains
+    MENU_ITEMS ||--o{ ORDER_ITEMS : references
+    ORDERS ||--o| BILLS : generates
+    MENU_ITEMS {
+        bigint id PK
+        varchar name
+        varchar category
+        decimal price
+        int stock
+        boolean available
+    }
+    RESTAURANT_TABLES {
+        bigint id PK
+        int seats
+        varchar zone
+        varchar status
+    }
+    ORDERS {
+        bigint id PK
+        varchar request_key UK
+        bigint dining_table_id FK
+        varchar order_type
+        varchar status
+        datetime created_at
+    }
+    ORDER_ITEMS {
+        bigint id PK
+        bigint order_id FK
+        bigint menu_item_id FK
+        varchar name
+        decimal unit_price
+        int quantity
+    }
+    BILLS {
+        bigint id PK
+        bigint order_id FK,UK
+        decimal subtotal
+        decimal discount
+        decimal tax_amount
+        decimal total
+        varchar payment_status
+        varchar payment_method
+        datetime paid_at
+    }

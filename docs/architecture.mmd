@@ -1,0 +1,12 @@
+flowchart TD
+    Staff[Restaurant staff / manager] --> React[React frontend :5173]
+    React -->|REST JSON via the local frontend server proxy| API[Spring Boot Java API :8080]
+    API --> Controller[Controllers + validated DTOs]
+    Controller --> Service[Transactional business services]
+    Service --> JPA[Spring Data JPA repositories]
+    JPA --> DB[(MySQL: menu_items, restaurant_tables, orders, order_items, bills)]
+    Service -->|Server-side secret| Gemini[Optional Gemini API]
+    Gemini -->|Validated suggestions only| Service
+    Service -->|No key / unavailable| Rules[Clearly labelled local rules]
+    API -->|Saved orders, bills, stock, analytics| React
+    React --> Print[Printable digital receipt]

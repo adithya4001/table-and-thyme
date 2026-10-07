@@ -1,0 +1,10 @@
+stateDiagram-v2
+    [*] --> RECEIVED: Place order + deduct stock
+    RECEIVED --> PREPARING: Kitchen starts
+    RECEIVED --> CANCELLED: Cancel + restore stock
+    PREPARING --> CANCELLED: Cancel + restore stock
+    PREPARING --> SERVED: Mark served
+    SERVED --> BILLING: Generate immutable bill
+    BILLING --> COMPLETED: Record payment + release table
+    CANCELLED --> [*]
+    COMPLETED --> [*]

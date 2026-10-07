@@ -1,0 +1,8 @@
+id	order_id	subtotal	discount	tax_amount	total	payment_status	payment_method
+1	1	650.00	65.00	29.25	614.25	PAID	CASH
+2	2	650.00	65.00	29.25	614.25	PAID	CASH
+3	3	370.00	0.00	18.50	388.50	PAID	CASH
+4	4	650.00	65.00	29.25	614.25	PAID	CASH
+id	name	stock
+1	Hyderabadi Biryani	33
+9	Mango Lassi	36
